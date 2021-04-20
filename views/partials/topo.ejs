@@ -7,7 +7,9 @@
     <meta name="author" content="">
     <link rel="icon" href="./assets/img/favicon.ico">
 
-    <title>Template de dashboard, usando Bootstrap.</title>
+    <title>
+      <%= typeof title != 'undefined' ? title: 'Título Padrão' %>
+    </title>
 
     <!-- Principal CSS do Bootstrap -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +35,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="http://localhost:3000/">
                   <span data-feather="home"></span>
                   Dashboard <span class="sr-only">(atual)</span>
                 </a>
@@ -45,13 +47,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link active" href="http://localhost:3000/produtos">
                   <span data-feather="shopping-cart"></span>
                   Produtos
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://localhost:3000/usuarios">
                   <span data-feather="users"></span>
                   Clientes
                 </a>

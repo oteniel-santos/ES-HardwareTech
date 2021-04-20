@@ -1,0 +1,19 @@
+<%- include('./partials/topo', {titulo:"Página Produtos"}) %>
+
+  <h1>View Produtos</h1>
+    <table border="1" class="table table-striped">
+      <tr>
+        <td>Código</td>
+        <td>Produto</td>
+        <td>Preço</td>
+      </tr>
+      <% for(p of produtos) { %>
+        <tr>
+          <td> <%= p.codigo %> </td>
+          <td> <%= p.desc %> </td>
+          <td> <%= p.preco %> </td>
+        </tr>
+      <% } %>
+    </table>
+
+<%- include('./partials/rodape') %>

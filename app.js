@@ -11,23 +11,11 @@ function viewIndex(req, res) {
 };
 
 app.get('/produtos', (req, res) => {
-  res.render('listar-produtos', produtos);
+  res.render('produtos', {produtos});
+});
 
-  //console.log(produtos);
-  /*let html = `<h1>Lista Vinda do Servidor</h1>
-              <ul>`
-  for (const prod of produtos) {
-    html += `
-    <li>
-      Codigo:  ${prod.codigo},
-      Produto: ${prod.produto},
-      Preço:   ${prod.preco}
-    </li>`
-  }              
-  html +=`</ul> `;
-  res.send(html);*/
-
-  //res.sendFile(__dirname + '/public/listar-produtos.html');
+app.get('/usuarios', (req, res) => {
+  res.render('usuarios');
 });
 
 app.listen(3000, () => {console.log('Rodando...')});
