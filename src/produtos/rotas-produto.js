@@ -1,21 +1,23 @@
 const express = require('express');
 const rotas = express.Router();
 
-rotas.get('/', (req, res) => {
-  res.render('./views/listar-produtos', {produtos});
+rotas.get('/listaprodutos', (req, res) => {
+  res.render('../views/listar-produtos', {produtos});
 });
 
 rotas.get('/novo', (req, res) => {
-  res.render('./views/cadastrar-produto')
+  res.render('../views/cadastrar-produto')
 });
 
-rotas.post('/', (req, res) => {
+rotas.post('/produto', (req, res) => {
   const produto = addProduto({
     descricao: req.body.descricao,
     preco: req.body.preco
   })
-  res.redirect('/listaproduto');
+  res.redirect('/produto/listaprodutos');
 });
+
+module.exports = rotas;
 
 const novoId = {
   _id: 6,
@@ -36,4 +38,5 @@ const produtos = [
   { codigo: 5, desc: 'Impressora',  preco: 450 }
 ];
 
-module.exports = rotas;
+
+
