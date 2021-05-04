@@ -1,20 +1,20 @@
 const express = require('express');
 const rotas = express.Router();
 
-rotas.get('/listaprodutos', (req, res) => {
-  res.render('../views/listar-produtos', {produtos});
+rotas.get('/', (req, res) => {
+  res.render('../src/views/listar-produtos', {produtos});
 });
 
 rotas.get('/novo', (req, res) => {
-  res.render('../views/cadastrar-produto')
+  res.render('../src/views/cadastrar-produto')
 });
 
-rotas.post('/produto', (req, res) => {
+rotas.post('/', (req, res) => {
   const produto = addProduto({
-    descricao: req.body.descricao,
+    desc: req.body.desc,
     preco: req.body.preco
   })
-  res.redirect('/produto/listaprodutos');
+  res.redirect('/produtos');
 });
 
 module.exports = rotas;

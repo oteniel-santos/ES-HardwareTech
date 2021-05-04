@@ -7,7 +7,7 @@ rotas.get('/', (req, res) => {
   res.render('./views/index');
 });
 
-rotas.use('/produto', rotasProdutos); 
+rotas.use('/produtos', rotasProdutos); 
 
 // rotas.get('/usuarios', (req, res) => {
 //   res.render('./views/usuarios');
